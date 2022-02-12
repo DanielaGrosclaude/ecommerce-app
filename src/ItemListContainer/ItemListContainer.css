@@ -1,5 +1,7 @@
 .greeting {
     font-family: Arial;
     font-size: 12px;
+    display: flex;
+    justify-content: center;
     
 }

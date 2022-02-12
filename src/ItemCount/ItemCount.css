@@ -1,0 +1,11 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardsProduct{
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-around;
+}
