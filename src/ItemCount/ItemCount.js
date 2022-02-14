@@ -51,9 +51,9 @@ function ItemCount () {
                 Lorem ipsum dolor
                 </Card.Text>
             </Card.Body>
-            <Button variant="outline-success" onClick={handleCount}class='btn'>+</Button>{''} 
+            <Button variant="outline-success" onClick={handleCount}className='btn'>+</Button>{''} 
             {count}
-            <Button variant="outline-danger" onClick={decrement}class='btn'>-</Button>{' '}
+            <Button variant="outline-danger" onClick={decrement}className='btn'>-</Button>{' '}
             </Card>
 
             <Card style={{ width: '18rem', height: '100%'}}>
@@ -64,9 +64,9 @@ function ItemCount () {
                 Lorem ipsum dolor
                 </Card.Text>
             </Card.Body>
-            <Button variant="outline-success" onClick={handleCount} class='btn'>+</Button>{''} 
+            <Button variant="outline-success" onClick={handleCount} className='btn'>+</Button>{''} 
             {count}
-            <Button variant="outline-danger" onClick={decrement}class='btn'>-</Button>{' '}
+            <Button variant="outline-danger" onClick={decrement}className='btn'>-</Button>{' '}
             </Card>
             
             <Card style={{ width: '18rem', height: '100%'}}>
@@ -77,9 +77,9 @@ function ItemCount () {
                 Lorem ipsum dolor
                 </Card.Text>
             </Card.Body>
-            <Button variant="outline-success" onClick={handleCount} class='btn'>+</Button>{''} 
+            <Button variant="outline-success" onClick={handleCount} className='btn'>+</Button>{''} 
             {count}
-            <Button variant="outline-danger" onClick={decrement}class='btn'>-</Button>{' '}
+            <Button variant="outline-danger" onClick={decrement}className='btn'>-</Button>{' '}
             </Card>
             <br/> 
            

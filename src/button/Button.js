@@ -36,10 +36,7 @@ const NavBar = () => {
               className="me-2"
               aria-label="Search"
             />
-          
-           <button>
-             FELIPE  
-           </button>
+
           </Form>
         </Navbar.Collapse>
       </Container>
