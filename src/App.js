@@ -1,17 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './navbar/NavBar.js';
-import ItemListContainer from './ItemListContainer/ItemListContainer';
+import NavBar from './Components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './ItemCount/ItemCount';
-
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
+import { ItemDetailContainer } from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer greeting={"Hola Mundo"} />
-      <ItemCount/>
+      <ItemListContainer greeting={"Bienvenido"} />
+      <ItemListContainer/>
+      <ItemDetailContainer/>
+      
     </div>
   );
 }
