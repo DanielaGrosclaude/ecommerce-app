@@ -1,0 +1,22 @@
+.itemDetails {
+  width: 18%;
+  margin: 0 auto;
+}
+
+.itemDetails img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .itemDetails {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .itemDetails {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

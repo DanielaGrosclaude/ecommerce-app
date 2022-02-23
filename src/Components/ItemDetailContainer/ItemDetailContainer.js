@@ -1,25 +1,30 @@
-import { useEffect, useState } from "react"
-import { getProduct } from '../../asyncmock'
-import { ItemDetail } from '../ItemDetail/ItemDetail.js'
-import { Spinner } from '../Spinner/Spinner.js'
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProducts } from "../Asyncmock";
+import ItemDetails from "../ItemDetails/ItemDetails";
+import "./ItemDetailContainer.css";
 
+const ItemDetailContainer = () => {
+  const [product, setProduct] = useState([]);
+  const [showDetails, setShowDetails] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-export const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
-    const [spinner, setSpinner] = useState(true);
+  const { id } = useParams();
 
-    useEffect(() => {
-        getProduct().then(product => {
-            setSpinner(false);
-            setProduct(product);
-        });
-    }, [])
+  useEffect(() => {
+    getProducts().then((products) => {
+      setProduct(products[id]);
+      setLoading(false);
+      setShowDetails(true);
+    });
+  }, [id]);
 
-    
-    return(
-        <>
-            {spinner ? <Spinner /> : null }
-            {spinner ? null : <ItemDetail product={product}/>}
-        </>
-    );
-    }
+  return (
+    <div className="itemDetailContainer">
+      {showDetails && <ItemDetails product={product} />}
+      {loading && <p>Loading...</p>}
+    </div>
+  );
+};
+
+export default ItemDetailContainer;

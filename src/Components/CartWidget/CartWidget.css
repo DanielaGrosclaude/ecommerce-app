@@ -1,7 +1,21 @@
-.carritoImg {
-    width: 25px;
-    height: auto;
-    margin-right: 100px;
-    margin-left: 20px;
-    
+.cartWidget {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartWidget p {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+
+svg {
+  font-size: 1.6rem;
+}
+
+svg:hover {
+  cursor: pointer;
+  opacity:unset;
 }

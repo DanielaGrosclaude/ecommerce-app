@@ -1,11 +1,15 @@
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.itemCount {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.cardsProduct{
-    display: flex;
-    align-items: flex-start;
-    justify-content:space-around;
+.itemCount .itemCountButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

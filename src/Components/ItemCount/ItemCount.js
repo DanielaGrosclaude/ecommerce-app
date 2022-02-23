@@ -1,89 +1,42 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState} from 'react'
-import { Button, Card} from 'react-bootstrap';
-import './ItemCount.css';
+import React, { useState } from "react";
+import Button from "../Button/Button";
+import "./ItemCount.css";
 
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [count, setCount] = useState(initial);
 
-function ItemCount () { 
-
-    const [count, setCount] = useState (0)
-    
-    const decrement =()=> {
-        if (count > 0){
-            setCount(count - 1)
-        }
+  const increment = () => {
+    if (count < stock) {
+      setCount(count + 1);
     }
-       
-    const [fechaYHora, setFechaYHora ] = useState (Date) 
+  };
 
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
 
-    const handleCount =()=>{
+  return (
+    <div className="itemCount">
+      <div className="itemCountButtons">
+        <Button widthButton="45%" name="-" handleClick={decrement} />
+        <p className="counter">{count}</p>
+        <Button widthButton="45%" name="+" handleClick={increment} />
+      </div>
 
-        setCount(count+1)
-        if (count >= 5){
-            alert('Sin stock :(')
-            setCount(0)
-        }
+      {count === 0 ? (
+        <Button margin=".5rem 0 0 0" widthButton="100%" name="No hay stock" />
+      ) : (
+        <Button
+          margin=".5rem 0 0 0"
+          widthButton="100%"
+          name="Agregar al carrito"
+          handleClick={() => onAdd(count)}
+        />
+      )}
+    </div>
+  );
+};
 
-        
-        //setDecount(count-1)
-        setFechaYHora(Date)
-
- } 
-
-
- useEffect(()=>{ //segunda instancia
-     //accion llamada a api para que no demore mucho tiempo.
-    console.log('llamada a api 2, una sola vez')   
- }, [fechaYHora]) //esto hace que se ejecute una sola vez 
-
-
-    return (
-        <div className ="cardsProduct" >
-            <Card style={{ width: '18rem'}}>
-           
-            <Card.Body>
-                <Card.Title>Producto</Card.Title>
-                <Card.Text>
-                Lorem ipsum dolor
-                </Card.Text>
-            </Card.Body>
-            <Button variant="outline-success" onClick={handleCount}class='btn'>+</Button>{''} 
-            {count}
-            <Button variant="outline-danger" onClick={decrement}class='btn'>-</Button>{' '}
-            </Card>
-
-            <Card style={{ width: '18rem', height: '100%'}}>
-         
-            <Card.Body>
-                <Card.Title>Producto</Card.Title>
-                <Card.Text>
-                Lorem ipsum dolor
-                </Card.Text>
-            </Card.Body>
-            <Button variant="outline-success" onClick={handleCount} class='btn'>+</Button>{''} 
-            {count}
-            <Button variant="outline-danger" onClick={decrement}class='btn'>-</Button>{' '}
-            </Card>
-            
-            <Card style={{ width: '18rem', height: '100%'}}>
-         
-            <Card.Body>
-                <Card.Title>Producto</Card.Title>
-                <Card.Text>
-                Lorem ipsum dolor
-                </Card.Text>
-            </Card.Body>
-            <Button variant="outline-success" onClick={handleCount} class='btn'>+</Button>{''} 
-            {count}
-            <Button variant="outline-danger" onClick={decrement}class='btn'>-</Button>{' '}
-            </Card>
-            <br/> 
-           
-            
-            
-           
-        </div>
-        )
-}
-export default ItemCount
+export default ItemCount;

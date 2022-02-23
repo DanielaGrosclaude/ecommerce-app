@@ -1,7 +1,67 @@
-.greeting {
-    font-family: Arial;
-    font-size: 12px;
+.itemListContainer {
+  text-align: center;
+}
+
+.category {
+  padding: 5px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: flex-start;
+}
+
+.category .nav-link {
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+  border: 1px;
+}
+
+.buttonNavLink
+{
+  padding: 5px;
+
+}
+
+.category .nav-link:hover {
+  font-weight: lighter;
+}
+
+.navLink:hover {
+  font-style: italic;
+}
+
+@media screen and (max-width: 1200px) {
+  .category .nav-link {
+    width: 68%;
     display: flex;
-    justify-content: center;
-    
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .category .nav-link {
+    width: 78%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .category .nav-link {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .category .nav-link {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
 }

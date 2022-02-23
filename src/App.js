@@ -1,20 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './Components/NavBar/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
-import { ItemDetailContainer } from './Components/ItemDetailContainer/ItemDetailContainer';
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import "./App.css";
+
+// React Router
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// Pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import Error404 from "./pages/Error404";
+
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting={"Bienvenido"} />
-      <ItemListContainer/>
-      <ItemDetailContainer/>
-      
-    </div>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/" element={<ItemListContainer />} />
+          <Route path="/products/:categoryId" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </main>
+  </BrowserRouter>
   );
 }
-  
+
 export default App;
