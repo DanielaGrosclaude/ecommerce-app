@@ -1,10 +1,32 @@
-.btn {
-  padding: 0.2rem 0.5rem;
-  background-color: #d6b87c;
-  border-radius: 0.2rem;
-  border: 1px solid black;
+.btn:hover {
+ 
+  background-color: #ffffff;
+  border: 1px solid rgb(245, 204, 255);
+  border-radius: 10px;
+  color: black;
+
+}
+.btn:active {
+ 
+  background-color: #ffffff;
+  border: 1px solid rgb(245, 204, 255);
+  border-radius: 0px;
+  color: black;
+
+}
+.btn:visited {
+ 
+  background-color: #ffffff;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  color: black;
 }
 
-.btn:hover {
+.btn {
   cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0px;
+  border-left: 1px solid rgb(245, 204, 255);;
+  border-right: 1px solid rgb(245, 204, 255);
 }

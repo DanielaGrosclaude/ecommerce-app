@@ -1,5 +1,19 @@
+.nameproduct{
+  font-size: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card-description{
+  font-size: 16px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgba(71, 71, 71, 0.63);
+
+}
+.btn-card{
+  color: white;
+  background-color: black;
+}
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(245, 204, 255);
   border-radius: 10px;
   
 }

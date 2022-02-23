@@ -6,14 +6,14 @@ import "./Item.css";
 export default function Item({ product }) {
   return (
     <div className="card">
-      <h1>{product.name}</h1>
+      <p className="nameproduct">{product.name}</p>
       <img src={product.img} alt={product.name} />
       <div className="card-content">
-        <p>{product.description}</p>
+        <p className="card-description">{product.description}</p>
         <p>{product.price}</p>
 
-        <Link to={`/item/${product.id}`}>
-          <Button name="Ver más"></Button>
+        <Link className="btn-card"  to={`/item/${product.id}`}>
+          <Button className="btn-card" name="Ver más"></Button>
         </Link>
       </div>
     </div>

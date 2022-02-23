@@ -14,9 +14,9 @@ const ItemDetails = ({ product, quantity }) => {
 
   return (
     <div className="itemDetails">
-      <h1>{product.name}</h1>
+      <h1 className="productname">{product.name}</h1>
       <img src={product.img} alt={product.name} />
-      <p>{product.description}</p>
+      <p className="description">{product.description}</p>
       <p>{product.price}</p>
 
       {counter ? (

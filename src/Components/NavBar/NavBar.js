@@ -18,7 +18,7 @@ const NavBar = () => {
     <>
       <header className="header">
         <NavLink to="/" className="logo-container">
-          <span className="logo">Mistica</span>
+          <span className="logo">MisticA</span>
         </NavLink>
          <nav className="navbar">
           <ul className="nav-links">
@@ -33,9 +33,6 @@ const NavBar = () => {
               <NavLink to="/cart" className="link">
                 <CartWidget />
               </NavLink>
-                
-           
-              
             </li>
           </ul>
           
