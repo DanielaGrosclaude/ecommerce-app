@@ -47,6 +47,7 @@
   background-color: aliceblue;
   color: rgb(0, 0, 0);
   text-align: center;
+  transition: ease-in 0,3;
   
   position: relative;
 }

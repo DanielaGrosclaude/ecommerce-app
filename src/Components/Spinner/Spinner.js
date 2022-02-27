@@ -1,9 +1,11 @@
-import './spinner.css'
+import './Spinner.css'
 
-export const Loading = () => {
+export const Spinner = () => {
     return(
     <>
         <div className='spinner'></div>
     </>
     );
 }
+
+export default Spinner;

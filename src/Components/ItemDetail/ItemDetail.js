@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./ItemDetails.css";
+import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
-const ItemDetails = ({ product, quantity }) => {
+
+const ItemDetail = ({ product, quantity }) => {
   const [counter, setCounter] = useState(quantity);
 
   const onAdd = (quantity) => {
@@ -30,4 +31,4 @@ const ItemDetails = ({ product, quantity }) => {
   );
 };
 
-export default ItemDetails;
+export default ItemDetail;

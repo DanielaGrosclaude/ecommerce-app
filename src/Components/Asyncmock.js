@@ -15,7 +15,7 @@ const products = [
     description: "Mascarilla de tela skin active manzanilla.",
     price: 502,
     category: "humectacion",
-    stock: 1
+    stock: 12
   },
   {
     id: 3,
@@ -145,7 +145,6 @@ const products = [
   },
 ];
 
-// filter
 
 const categorias = [
   {
@@ -166,21 +165,31 @@ const categorias = [
   },
 ];
 
-// Return categories list
+// retorna lista categorias
 export const getCategorias = () => {
   return categorias;
 };
 
 
-// Return products list
-export const getProducts = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 2000);
+// Retorna lista de producto
+export const getProducts = (idCategory) => {
+  return new Promise ((resolve) => {
+      const productsToResolve = idCategory ? products.filter(item => item.category === idCategory) : products
+      setTimeout(() => {
+          resolve(productsToResolve);
+      },500);
   });
-};
+}
 
+export const getProduct = (id) => {
+  return new Promise((resolve) => {
+      const product = products.find(p => p.id === parseInt(id))
+      setTimeout(() => {
+        console.log(product)
+          resolve(product)
+      }, 2000)
+  })
+}
 // Retorna producto segun categoria
 export const getProductsByCategory = (categoryId) => {
   return new Promise((resolve) => {
