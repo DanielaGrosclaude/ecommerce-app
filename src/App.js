@@ -2,6 +2,9 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import "./App.css";
+import { CartContext } from "./components/CartContext/CartContext";
+
+
 
 // React Router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,10 +15,13 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Error404 from "./pages/Error404";
+import { NotificationServicesProvider } from "./services/Notification";
 
 
 function App() {
   return (
+    <NotificationServicesProvider>
+    <CartContext>
     <BrowserRouter>
       <NavBar />
       <main>
@@ -31,6 +37,8 @@ function App() {
         </Routes>
       </main>
   </BrowserRouter>
+  </CartContext>
+  </NotificationServicesProvider>
   );
 }
 
